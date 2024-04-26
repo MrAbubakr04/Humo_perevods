@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My_project</string>
+    <string name="bootn_line">Настоящим, я соглашаюсь и принимаю условия описанные в <u><b>Лицензионном соглашении</b></u>, <u><b>Публичной оферте</b></u> и <u><b>Политике конфиденциальности</b></u></string>
+</resources>

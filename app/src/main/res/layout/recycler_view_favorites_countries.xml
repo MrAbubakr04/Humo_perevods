@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="116dp"
+    android:layout_height="108dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp"
+    app:strokeColor="#F5F5F5"
+    app:strokeWidth="1.2dp"
+    android:backgroundTint="@color/white_pone">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+        <ImageView
+            android:id="@+id/humo_perevod_image_flag_tajikistan"
+            android:layout_alignParentStart="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flag_tajikistan"/>
+        <TextView
+            android:layout_marginTop="28dp"
+            android:layout_below="@id/humo_perevod_image_flag_tajikistan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Таджикистан"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#212121" />
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
