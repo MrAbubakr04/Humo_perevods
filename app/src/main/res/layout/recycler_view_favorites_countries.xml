@@ -7,27 +7,33 @@
     app:cardElevation="0dp"
     app:strokeColor="#F5F5F5"
     app:strokeWidth="1.2dp"
+    android:layout_marginBottom="16dp"
+    android:layout_marginEnd="8dp"
     android:backgroundTint="@color/white_pone">
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="12dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <ImageView
-            android:id="@+id/humo_perevod_image_flag_tajikistan"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:id="@+id/humoperevodimageflag"
             android:layout_alignParentStart="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/flag_tajikistan"/>
         <TextView
-            android:layout_marginTop="28dp"
-            android:layout_below="@id/humo_perevod_image_flag_tajikistan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginBottom="12dp"
+            android:id="@+id/humoperevodcountryname"
+            android:layout_marginTop="26dp"
+            android:layout_below="@id/humoperevodimageflag"
+            android:layout_width="92dp"
+            android:layout_height="17dp"
             android:text="Таджикистан"
-            android:textStyle="normal"
-            android:textSize="14sp"
             android:fontFamily="sans-serif-medium"
+            android:textSize="14dp"
             android:textColor="#212121" />
-    </RelativeLayout>
+    </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
