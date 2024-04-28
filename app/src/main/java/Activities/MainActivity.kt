@@ -1,19 +1,20 @@
-package com.example.my_project
+package Activities
 
-import Adapters.FirstAdapter
+import Adapters.CountryAdapter
+import Adapters.PopularCountryAdapter
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.app.AlertDialog
-import android.graphics.Color
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.my_project.R
 import com.example.my_project.databinding.ActivityMainBinding
 import data_classes.Countries
 
 class MainActivity : AppCompatActivity() {
-    private  val varadapter1 = FirstAdapter()
-    private val varadapter2 = FirstAdapter()
+    private  val AdapterPopularCountries = PopularCountryAdapter()
     lateinit var binding: ActivityMainBinding
     private val countryList = listOf(
         "Таджикистан",
@@ -25,6 +26,10 @@ class MainActivity : AppCompatActivity() {
         R.drawable.flag_russia,
         R.drawable.flag_uzbekistan
     )
+
+
+    //private val myAdapter=PopularCountryAdapter1(listOfCountry)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -36,25 +41,40 @@ class MainActivity : AppCompatActivity() {
                 .setMessage("Если вы уверены, что хотите выйти и удалить все ВАШИ данные, нажмите ПРОДОЛЖИТЬ")
                 .setNegativeButton("ОТМЕНИТЬ") { dialog, which ->
                 }
-                    .setPositiveButton("ПРОДОЛЖИТЬ") { dialog, which ->
-                        //sharedPreferencesNumber?.edit()?.remove("abonent_number")?.apply()
-                        finishAffinity()
-                    }
-                    .show()
+                .setPositiveButton("ПРОДОЛЖИТЬ") { dialog, which ->
+                    val sharedPreferences = getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE)
+                    sharedPreferences.edit().clear().apply()
+                    finish()
+                }
+                .show()
         }
 
-        init1()
+        FavoriteCountries()
+        binding.imageHumoPerevodiMaterialButton.setOnClickListener{
+
+        }
+
+        val button:com.google.android.material.button.MaterialButton = findViewById(R.id.material_button)
+        button.setOnClickListener {
+            val intent = Intent(this,CountriesActivity::class.java)
+            startActivity(intent)
+        }
+
     }
     @SuppressLint("ResourceType")
-    private  fun init1(){
+    private  fun FavoriteCountries(){
         binding.apply{
-            ReciclerView1.layoutManager = LinearLayoutManager(this@MainActivity,
+            ReciclerViewFavoriteCountri.layoutManager = LinearLayoutManager(this@MainActivity,
                 LinearLayoutManager.HORIZONTAL, false)
-            ReciclerView1.adapter = varadapter1
+            //ReciclerView1.adapter = myAdapter
+            ReciclerViewFavoriteCountri.adapter =AdapterPopularCountries
             for (i in 0 until flagList.size){
                 val datass = Countries(flagList[i],countryList[i])
-                varadapter1.adddata(datass)
+                AdapterPopularCountries.adddata(datass)
             }
+
         }
     }
+
+
 }

@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <Button
+            android:id="@+id/exit_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -47,7 +48,9 @@
                 app:cardElevation="0dp"
                 android:background="#FFFFFF">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_input_edit_text"
                     android:layout_marginStart="12dp"
+                    android:inputType="number"
                     android:paddingHorizontal="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -59,17 +62,20 @@
             </com.google.android.material.card.MaterialCardView>
             <CheckBox
                 android:paddingVertical="32dp"
-                android:id="@+id/checkbox_1"
+                android:id="@+id/check_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="12dp"
                 android:paddingEnd="30dp"
+                android:clickable="false"
                 android:text="@string/bootn_line"/>
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/material_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#E0E0E0"
                     android:text="Продолжить"
+                    android:clickable="false"
                     android:textColor="#333333"
                     android:textSize="16sp">
                 </com.google.android.material.button.MaterialButton>

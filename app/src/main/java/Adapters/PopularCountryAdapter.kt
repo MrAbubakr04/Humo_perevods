@@ -8,13 +8,13 @@ import com.example.my_project.R
 import com.example.my_project.databinding.RecyclerViewFavoritesCountriesBinding
 import data_classes.Countries
 
-class FirstAdapter: RecyclerView.Adapter<FirstAdapter.textHolder> (){
+class PopularCountryAdapter: RecyclerView.Adapter<PopularCountryAdapter.textHolder> (){
     val countryList = ArrayList<Countries>()
     class textHolder(item:View):RecyclerView.ViewHolder (item){
         val binding = RecyclerViewFavoritesCountriesBinding.bind(item)
         fun bind(country:Countries) = with(binding){
-            humoperevodcountryname.text = country.name
-            humoperevodimageflag.setImageResource(country.flag)
+            humoPerevodFavoriteCountryName.text = country.name
+            humoPerevodFavoriteImageFlag.setImageResource(country.flag)
         }
     }
 
