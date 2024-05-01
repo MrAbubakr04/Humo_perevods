@@ -72,6 +72,7 @@ class LoginActivity : AppCompatActivity() {
             materialButtonColor = if (isChecked) {
                 ContextCompat.getColor(this, R.color.material_button_color)
             } else {
+                materialButton.isClickable = false
                 Color.parseColor("#E0E0E0")
             }
             materialButton.backgroundTintList = ColorStateList.valueOf(materialButtonColor)
